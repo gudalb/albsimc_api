@@ -12,16 +12,14 @@ import java.io.File
 
 @RestController
 class RestController(val simService: SimService) {
-
+    @CrossOrigin
     @GetMapping(value = ["/simulation/{symbol}"],
             produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
     fun simulation(@PathVariable symbol: String): Flux<SimulationResult> = simService.generateSim(symbol)
 
     @CrossOrigin
-    @PostMapping(value = ["/runsim"],produces = ["multipart/form-data"])
-    fun runSim(@RequestBody charProfile: String):String {
-        print("runsim rest")
+    @PostMapping(value = ["/runsim"],produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
+    fun runSim(@RequestBody charProfile: String): Flux<String> =
         simService.runSim(charProfile)
-        return "running"
-    }
+
 }
