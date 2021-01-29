@@ -1,10 +1,10 @@
-package se.nackademin.albsimc_api.Controllers
+package se.nackademin.albsimc_api.controllers
 
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.stereotype.Controller
 import reactor.core.publisher.Flux
-import se.nackademin.albsimc_api.Models.SimulationResult
-import se.nackademin.albsimc_api.Services.SimService
+import se.nackademin.albsimc_api.models.SimulationResult
+import se.nackademin.albsimc_api.services.SimService
 
 @Controller
 class RSocketController (val simService: SimService) {

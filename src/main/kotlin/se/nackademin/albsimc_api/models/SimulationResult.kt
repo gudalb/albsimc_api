@@ -1,4 +1,4 @@
-package se.nackademin.albsimc_api.Models
+package se.nackademin.albsimc_api.models
 
 import java.time.LocalDateTime
 
